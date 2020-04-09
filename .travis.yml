@@ -1,0 +1,16 @@
+language: python
+python:
+  - 3.6
+  - 3.7
+  - 3.8
+install:
+  - pip install --upgrade pip
+  - pip check
+script: echo global script
+
+jobs:
+  include:
+    - name: PyPi Release
+      if: tag IS present
+      python: 3.8
+      script: echo run release script
