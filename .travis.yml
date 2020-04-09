@@ -13,4 +13,6 @@ jobs:
     - name: PyPi Release
       if: tag IS present
       python: 3.8
-      script: echo run release script
+      script:
+        - echo run release script
+        - echo Attempt to show a secret x${TWINE_USERNAME}x
